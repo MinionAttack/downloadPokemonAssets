@@ -1,19 +1,17 @@
 #!/usr/bin/python
 
-##############################################
-##  Author: MinionAttack                    ##
-##  GitHub: https://github.com/MinionAttack ##
-##############################################
+#############################################
+## Author: MinionAttack                    ##
+## GitHub: https://github.com/MinionAttack ##
+#############################################
 
+import os
 import sys
-import errno
-import urllib
-from os import makedirs
-from os.path import expanduser
+import urllib.request
+from pathlib import Path
 
-
-DOWNLOAD_FOLDER = '/PokemonHDicons'
-BASE_URL = 'https://silphroad-s3-xika4hn.netdna-ssl.com/img/pokemon/icons/'
+DOWNLOAD_FOLDER = 'PokemonHDicons'
+BASE_URL = 'https://assets.thesilphroad.com/img/pokemon/icons'
 START_INDEX = 1
 FINISH_INDEX = 650
 SIZE_A = '96'
@@ -22,32 +20,33 @@ SIZE_SEPARATOR = 'x'
 SEPARATOR = '/'
 FILE_EXTENSION = '.png'
 
-def createFolder(path):
+
+def create_folder(path):
     try:
-        makedirs(path)
-    except OSError as exception:
-        if exception.errno != errno.EEXIST:
-            raise
+        Path(path).mkdir(parents=True, exist_ok=True)
+    except (OSError, FileNotFoundError) as exception:
+        print('Error creating download folder: {}.'.format(exception.errno))
+        sys.exit(1)
 
 
-def dowloadIcons(path):
-    for pokemonNumber in range(START_INDEX,FINISH_INDEX):
-        url = BASE_URL + SIZE_A + SIZE_SEPARATOR + SIZE_B + SEPARATOR + str(pokemonNumber) + FILE_EXTENSION
-        name = str(pokemonNumber) + FILE_EXTENSION
-        output = path + SEPARATOR + name
-        print 'Downloading Pokemon icon: ' + str(pokemonNumber)
-        urllib.urlretrieve(url, output)
-    
+def dowload_icons(path):
+    for pokemon_number in range(START_INDEX, FINISH_INDEX):
+        url = BASE_URL + SEPARATOR + SIZE_A + SIZE_SEPARATOR + SIZE_B + SEPARATOR + str(pokemon_number) + FILE_EXTENSION
+        name = str(pokemon_number) + FILE_EXTENSION
+        output = os.path.join(path, name)
+        print('Downloading Pokemon icon: {}.'.format(pokemon_number))
+        urllib.request.urlretrieve(url, output)
 
-def main(argv):
-    userHome = expanduser("~")
-    path = userHome + DOWNLOAD_FOLDER
-    createFolder(path)
+
+def main():
+    user_home = os.path.expanduser("~")
+    path = os.path.join(user_home, DOWNLOAD_FOLDER)
+    create_folder(path)
     try:
-        dowloadIcons(path)
+        dowload_icons(path)
     except KeyboardInterrupt:
-        print 'Download process interrupted.'
-    
+        print('Download process interrupted.')
+
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()
