@@ -1205,6 +1205,37 @@ GALAR = [
     {'id': 'calyrex-shadow', 'name': 'Shadow Rider Calyrex', 'number': '898'},
 ]
 
+# Hisui: The name given to the Sinnoh region at the time when the first human settlements took place.
+HISUI_FORMS = [
+    {'id': 'growlithe-hisui', 'name': 'Hisuian Growlithe', 'number': '58'},
+    {'id': 'arcanine-hisui', 'name': 'Hisuian Arcanine', 'number': '59'},
+    {'id': 'voltorb-hisui', 'name': 'Hisuian Voltorb', 'number': '100'},
+    {'id': 'electrode-hisui', 'name': 'Hisuian Electrode', 'number': '101'},
+    {'id': 'typhlosion-hisui', 'name': 'Hisuian Typhlosion', 'number': '157'},
+    {'id': 'qwilfish-hisui', 'name': 'Hisuian Qwilfish', 'number': '211'},
+    {'id': 'sneasel-hisui', 'name': 'Hisuian Sneasel', 'number': '215'},
+    {'id': 'samurott-hisui', 'name': 'Hisuian Samurott', 'number': '503'},
+    {'id': 'lilligant-hisui', 'name': 'Hisuian Lilligant', 'number': '549'},
+    {'id': 'zorua-hisui', 'name': 'Hisuian Zorua', 'number': '570'},
+    {'id': 'zoroark-hisui', 'name': 'Hisuian Zoroark', 'number': '571'},
+    {'id': 'braviary-hisui', 'name': 'Hisuian Braviary', 'number': '628'},
+    {'id': 'sliggoo-hisui', 'name': 'Hisuian Sliggoo', 'number': '705'},
+    {'id': 'goodra-hisui', 'name': 'Hisuian Goodra', 'number': '706'},
+    {'id': 'avalugg-hisui', 'name': 'Hisuian Avalugg', 'number': '713'},
+    {'id': 'decidueye-hisui', 'name': 'Hisuian Decidueye', 'number': '724'},
+]
+
+HISUI = [
+    {'id': '899', 'name': 'Wyrdeer', 'number': '899'},
+    {'id': '900', 'name': 'Kleavor', 'number': '900'},
+    {'id': '901', 'name': 'Ursaluna', 'number': '901'},
+    {'id': '902', 'name': 'Basculegion', 'number': '902'},
+    {'id': '903', 'name': 'Sneasler', 'number': '903'},
+    {'id': '904', 'name': 'Overqwil', 'number': '904'},
+    {'id': 'enamorus-incarnate', 'name': 'Enamorus (Incarnate Forme)', 'number': '905'},
+    {'id': 'enamorus-therian', 'name': 'Enamorus (Therian Forme)', 'number': '905'},
+]
+
 
 def get_region(region: str) -> Dict[str, List[Dict[str, str]]]:
     if region == "Kanto":
@@ -1223,5 +1254,7 @@ def get_region(region: str) -> Dict[str, List[Dict[str, str]]]:
         return {"Local": ALOLA, "Alolan Forms": ALOLA_FORMS}
     elif region == "Galar":
         return {"Local": GALAR, "Galarian Forms": GALAR_FORMS, "Gigantamax Forms": GALAR_GIGANTAMAX}
+    elif region == "Hisui":
+        return {"Local": HISUI, "Hisuian Forms": HISUI_FORMS}
     else:
         return {}

@@ -108,11 +108,11 @@ If you want to know how to use a specific command, for example the icons command
 And it will show the help:
 
 ```
-usage: download_pokemon_assets.py icons [-h] --region {Kanto,Johto,Hoenn,Sinnoh,Unova,Kalos,Alola,Galar} [{Kanto,Johto,Hoenn,Sinnoh,Unova,Kalos,Alola,Galar} ...]
+usage: download_pokemon_assets.py icons [-h] --region {Kanto,Johto,Hoenn,Sinnoh,Unova,Kalos,Alola,Galar,Hisui} [{Kanto,Johto,Hoenn,Sinnoh,Unova,Kalos,Alola,Galar,Hisui} ...]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --region {Kanto,Johto,Hoenn,Sinnoh,Unova,Kalos,Alola,Galar} [{Kanto,Johto,Hoenn,Sinnoh,Unova,Kalos,Alola,Galar} ...]
+  --region {Kanto,Johto,Hoenn,Sinnoh,Unova,Kalos,Alola,Galar,Hisui} [{Kanto,Johto,Hoenn,Sinnoh,Unova,Kalos,Alola,Galar,Hisui} ...]
                         Region of the Pokémon. To indicate several at the same time, they must be separated by spaces.
 ```
 
@@ -127,24 +127,25 @@ optional arguments:
 ```
 Pokémon Assets
 ├── Icons
-│  ├── Alola
-│  ├── Galar
-│  ├── Hoenn
-│  ├── Johto
-│  ├── Kalos
-│  ├── Kanto
-│  ├── Sinnoh
-│  └── Unova
+│   ├── Alola
+│   ├── Galar
+│   ├── Hisui
+│   ├── Hoenn
+│   ├── Johto
+│   ├── Kalos
+│   ├── Kanto
+│   ├── Sinnoh
+│   └── Unova
 └── Images
     ├── detail
-    │  ├── Alola
-    │  ├── Galar
-    │  ├── Hoenn
-    │  ├── Johto
-    │  ├── Kalos
-    │  ├── Kanto
-    │  ├── Sinnoh
-    │  └── Unova
+    │   ├── Alola
+    │   ├── Galar
+    │   ├── Hoenn
+    │   ├── Johto
+    │   ├── Kalos
+    │   ├── Kanto
+    │   ├── Sinnoh
+    │   └── Unova
     └── full
         ├── Alola
         ├── Galar
@@ -184,6 +185,30 @@ To indicate several regions at the same time, they must be separated by spaces:
   - Nº 892 - Gigantamax Urshifu (Single Strike Style)
   - Nº 898 - Ice Rider Calyrex
   - Nº 898 - Shadow Rider Calyrex
+- **HISUI**:
+  - Nº 899 - Wyrdeer
+  - Nº 900 - Kleavor
+  - Nº 901 - Ursaluna
+  - Nº 902 - Basculegion
+  - Nº 903 - Sneasler
+  - Nº 904 - Overqwil
+  - Nº 905 - Enamorus (Incarnate Forme)
+  - Nº 905 - Enamorus (Therian Forme)
+- **HISUIAN FORMS**:
+  - Nº 59 - Hisuian Arcanine
+  - Nº 100 - Hisuian Voltorb
+  - Nº 101 - Hisuian Electrode
+  - Nº 157 - Hisuian Typhlosion
+  - Nº 211 - Hisuian Qwilfish
+  - Nº 215 - Hisuian Sneasel
+  - Nº 503 - Hisuian Samurott
+  - Nº 549 - Hisuian Lilligant
+  - Nº 570 - Hisuian Zorua
+  - Nº 571 - Hisuian Zoroark
+  - Nº 705 - Hisuian Sliggoo
+  - Nº 706 - Hisuian Goodra
+  - Nº 713 - Hisuian Avalugg
+  - Nº 724 - Hisuian Decidueye
 
 To download the images of a region (for a certain size), type:
 
@@ -196,7 +221,10 @@ To indicate several regions at the same time, they must be separated by spaces:
 **Note 3**: At the time of writing, some *detail* assets are missing or could not be found:
 
 - **SINNOH**:
-  - Nº 423 - Gastrodon (East Sea)
+  - Detail size:
+    - Nº 423 - Gastrodon (East Sea)
+- **HISUI**:
+  - The official *Pokédex* has not yet listed any *Pokémon* from this region.
 
 ## Licensing agreement
 

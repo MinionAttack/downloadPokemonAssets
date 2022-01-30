@@ -46,7 +46,7 @@ def download_images(size: str, regions: List[str]) -> None:
             else:
                 print(f"The {region} region is not available.")
         else:
-            print(f"No Pokémons found for region {region}.")
+            print(f"No Pokémons have been found for the {region} region.")
 
     print(f"\nAvailable assets downloaded at: {download_folder.resolve().__str__()}")
 

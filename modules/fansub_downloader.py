@@ -36,11 +36,11 @@ def download_icons(regions: List[str]) -> None:
             if region in ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova"]:
                 local_pokemons = regional_pokemons.get("Local")
                 get_single_result(URL, EXTENSION, HEADERS, local_pokemons, region, region_folder)
-            elif region in ["Kalos", "Alola", "Galar"]:
+            elif region in ["Kalos", "Alola", "Galar", "Hisui"]:
                 get_multiple_result(URL, EXTENSION, HEADERS, regional_pokemons, region, region_folder)
             else:
                 print(f"The {region} region is not available.")
         else:
-            print(f"No Pokémons found for region {region}.")
+            print(f"No Pokémons have been found for the {region} region.")
 
     print(f'\nAvailable assets downloaded at: {download_folder.resolve().__str__()}')
